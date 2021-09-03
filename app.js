@@ -13,6 +13,15 @@ for( var i = 0; i < jPerson.emails.length; i++ ){
   document.querySelector("#emails").insertAdjacentHTML("beforebegin", divEmail)
 }
 
+const saveName = (name) => {
+  const txtName = document.querySelector("input").value
+  document.querySelector("#name").innerText = txtName
+}
+
+// function saveName(){
+
+// }
+
 
 
 // document.querySelector("#name").innerHTML = jPerson.name
