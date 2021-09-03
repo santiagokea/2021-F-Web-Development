@@ -1,16 +1,30 @@
+// SantiJS
+// Select one element - querySelector
+function one(query){
+  return document.querySelector(query)
+}
+
+function all(query){
+  return document.querySelectorAll(query)
+}
+
+// one("#name span").innerHTML = "NEW HERE"
+
+
+
 var jPerson = {
   "name" : "Santiago",
   "emails" : ["@a", "@b", "@c"],
   "colors" : ["gray", "green", "blue"]
 }
 
-document.querySelector("#name").innerHTML = jPerson.name
+one("#name").innerHTML = jPerson.name
 
 for( var i = 0; i < jPerson.emails.length; i++ ){
   var email = jPerson.emails[i]
   var color = jPerson.colors[i]
   var divEmail = `<div class="email" style="color: ${color}">${email}</div>`
-  document.querySelector("#emails").insertAdjacentHTML("beforebegin", divEmail)
+  one("#emails").insertAdjacentHTML("beforebegin", divEmail)
 }
 
 const saveName = (name) => {
