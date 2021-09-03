@@ -6,7 +6,9 @@ var jPerson = {
 document.querySelector("#name").innerHTML = jPerson.name
 // <div class="email" style="color: blue">@x</div>
 jPerson.emails.forEach( email => {
-  console.log(email)
+  var divEmail = `<div class="email" style="color: blue">${email}</div>`
+  // beforebegin beforeend afterbegin afterend
+  document.querySelector("#emails").insertAdjacentHTML("afterbegin", divEmail)
 })
 
 
