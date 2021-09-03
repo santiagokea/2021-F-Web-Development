@@ -5,12 +5,23 @@ var jPerson = {
 }
 
 document.querySelector("#name").innerHTML = jPerson.name
-// <div class="email" style="color: blue">@x</div>
-jPerson.emails.forEach( email => {
-  var divEmail = `<div class="email" style="color: blue">${email}</div>`
-  // beforebegin beforeend afterbegin afterend
+
+for( var i = 0; i < jPerson.emails.length; i++ ){
+  var email = jPerson.emails[i]
+  var color = jPerson.colors[i]
+  var divEmail = `<div class="email" style="color: ${color}">${email}</div>`
   document.querySelector("#emails").insertAdjacentHTML("beforebegin", divEmail)
-})
+}
+
+
+
+// document.querySelector("#name").innerHTML = jPerson.name
+// // <div class="email" style="color: blue">@x</div>
+// jPerson.emails.forEach( email => {
+//   var divEmail = `<div class="email" style="color: blue">${email}</div>`
+//   // beforebegin beforeend afterbegin afterend
+//   document.querySelector("#emails").insertAdjacentHTML("beforebegin", divEmail)
+// })
 
 
 
