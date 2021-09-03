@@ -2,9 +2,25 @@ var jPerson = {
   "name" : "Santiago",
   "emails" : ["@a", "@b"]
 }
+
+document.querySelector("#name").innerHTML = jPerson.name
+// <div class="email" style="color: blue">@x</div>
 jPerson.emails.forEach( email => {
-  console.log( email )
+  console.log(email)
 })
+
+
+
+// the emails must also contain @c
+// How to you add @c to the emails array?
+// jPerson.emails.push("@c")
+
+// for( var i = 0; i < jPerson.emails.length; i++ ){
+//   console.log( jPerson.emails[i] )
+// }
+// jPerson.emails.forEach( email => {
+//   console.log( email )
+// })
 // How do I show all my emails?
 // console.log( jPerson.emails  )
 
