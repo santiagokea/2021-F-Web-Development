@@ -1,8 +1,28 @@
-var aLetters = ["a", "b", "c", "d", "e"]
-for(var i = 0; i < aLetters.length; i++){
-  if( i == 1 && aLetters[i] == "b" ) continue 
-  console.log(aLetters[i])
+var jPerson = { 
+  "name" : "Santiago",
+  "lastName" : "Donoso",
+  "year" : 2021,
+  "nickName" : "Santi" 
 }
+console.log( jPerson )
+// jPerson.name = "XXX"
+// console.log( jPerson.name )
+// jPerson.lastName = "YYY"
+// console.log( jPerson.lastName )
+// jPerson.hobby = "XXXXXXXXX"
+
+
+// console.log( `Hi ${}` )
+
+
+
+
+
+// var aLetters = ["a", "b", "c", "d", "e"]
+// for(var i = 0; i < aLetters.length; i++){
+//   if( i == 1 && aLetters[i] == "b" ) continue 
+//   console.log(aLetters[i])
+// }
 // if {}
 // else()
 // Show all letters except the letter in
