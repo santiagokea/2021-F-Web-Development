@@ -1,10 +1,25 @@
-var jPerson = { 
+var jPerson = {
   "name" : "Santiago",
-  "lastName" : "Donoso",
-  "year" : 2021,
-  "nickName" : "Santi" 
+  "emails" : ["@a", "@b"]
 }
-console.log( jPerson )
+jPerson.emails.forEach( email => {
+  console.log( email )
+})
+// How do I show all my emails?
+// console.log( jPerson.emails  )
+
+
+
+
+
+
+// var jPerson = { 
+//   "name" : "Santiago",
+//   "lastName" : "Donoso",
+//   "year" : 2021,
+//   "nickName" : "Santi" 
+// }
+// console.log( jPerson )
 // jPerson.name = "XXX"
 // console.log( jPerson.name )
 // jPerson.lastName = "YYY"
