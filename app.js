@@ -1,6 +1,7 @@
 var jPerson = {
   "name" : "Santiago",
-  "emails" : ["@a", "@b"]
+  "emails" : ["@a", "@b", "@c"],
+  "colors" : ["gray", "green", "blue"]
 }
 
 document.querySelector("#name").innerHTML = jPerson.name
@@ -8,7 +9,7 @@ document.querySelector("#name").innerHTML = jPerson.name
 jPerson.emails.forEach( email => {
   var divEmail = `<div class="email" style="color: blue">${email}</div>`
   // beforebegin beforeend afterbegin afterend
-  document.querySelector("#emails").insertAdjacentHTML("afterbegin", divEmail)
+  document.querySelector("#emails").insertAdjacentHTML("beforebegin", divEmail)
 })
 
 
