@@ -5,15 +5,19 @@ function all(q){ return document.querySelectorAll(q) }
 // Compoment
 let item = {
 
-  saveItem : function(){
+  save : function(){
     const itemName = one("#itemName").value
     let divItem = ` <div class="item">
                       <div>${itemName}</div>
-                      <div>🗑️</div>
+                      <div onclick="item.delete()">🗑️</div>
                     </div>`
 
     one("#items").insertAdjacentHTML('afterbegin', divItem) 
     one("#itemName").value = ""
-  } 
+  },
+  
+  delete : function(){
+    event.target.parentNode.remove()
+  }
 
 }
