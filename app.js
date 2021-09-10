@@ -11,7 +11,6 @@ let item = {
                       <div>${itemName}</div>
                       <div onclick="item.delete()">🗑️</div>
                     </div>`
-
     one("#items").insertAdjacentHTML('afterbegin', divItem) 
     one("#itemName").value = ""
   },
