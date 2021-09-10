@@ -8,9 +8,14 @@
   <title>Document</title>
 </head>
 <body>
-  <form>
+
+  <a href="https://amazon.com" onclick="return false">
+    amazon
+  </a>
+
+  <form onsubmit="return false">
     <input type="text" placeholder="item name">
-    <button onclick="saveItem()">Save item</button>
+    <button onclick="item.saveItem()">Save item</button>
   </form>
 
 <script src="app.js"></script>
