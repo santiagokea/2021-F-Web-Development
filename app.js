@@ -1,18 +1,29 @@
+// let items = []
+
+// if( ! localStorage.items ){
+//   alert("no items in storage")
+// }else{
+//   items = JSON.parse( localStorage.items )
+//   console.log(items)
+// }
+
+// Ternary
+let items = ! localStorage.items ? [] : JSON.parse( localStorage.items )
+console.log(items)
+
+
+
+
+
 //This is a valid JSON object
-let item = {"name":"shoe", "price":10}
-// Save this object to localStorage
-// Convert anything to text to put it in localStorage
-// JSON.stringify
-localStorage.myItem = JSON.stringify( item )
-// Read the item and alert the price only
-let itemFromMemory = JSON.parse(localStorage.myItem) // {"name":"shoe","price":10}
-alert( itemFromMemory.price )
-
-
-
-
-
-
+// let item = {"name":"shoe", "price":10}
+// // Save this object to localStorage
+// // Convert anything to text to put it in localStorage
+// // JSON.stringify
+// localStorage.myItem = JSON.stringify( item )
+// // Read the item and alert the price only
+// let itemFromMemory = JSON.parse(localStorage.myItem) // {"name":"shoe","price":10}
+// alert( itemFromMemory.price )
 
 // Set an item in localStorage
 // localStorage.setItem("name", "AAA")
