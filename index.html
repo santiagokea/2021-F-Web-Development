@@ -9,14 +9,12 @@
 </head>
 <body>
 
-  <a href="https://amazon.com" onclick="return false">
-    amazon
-  </a>
-
   <form onsubmit="return false">
-    <input type="text" placeholder="item name">
+    <input id="itemName" type="text" placeholder="item name">
     <button onclick="item.saveItem()">Save item</button>
   </form>
+
+  <div id="items"></div>
 
 <script src="app.js"></script>
 
