@@ -63,7 +63,7 @@ let item = {
     one("#itemName").value = ""
     // This is for memory (localStorage)
     // {"name":"XXXXXXX"}
-    let jItem = {"name":itemName}
+    let jItem = {"id" : Math.random() ,"name":itemName}
     // Push the jItem to the items array
     items.push(jItem)
     // Save the items array in localStorage
