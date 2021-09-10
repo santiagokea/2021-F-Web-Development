@@ -41,8 +41,6 @@ console.log("theName", theName)
 
 
 
-
-
 function one(q){ return document.querySelector(q) }
 function all(q){ return document.querySelectorAll(q) }
 
