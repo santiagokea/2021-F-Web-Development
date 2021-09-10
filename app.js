@@ -6,10 +6,8 @@
 //   items = JSON.parse( localStorage.items )
 //   console.log(items)
 // }
-
 // Ternary
-let items = ! localStorage.items ? [] : JSON.parse( localStorage.items )
-console.log(items)
+// console.log(items)
 
 
 
@@ -45,28 +43,35 @@ console.log("theName", theName)
 
 
 
+function one(q){ return document.querySelector(q) }
+function all(q){ return document.querySelectorAll(q) }
+
+let items = ! localStorage.items ? [] : JSON.parse( localStorage.items )
 
 
+// Compoment
+let item = {
 
-// function one(q){ return document.querySelector(q) }
-// function all(q){ return document.querySelectorAll(q) }
-
-
-// // Compoment
-// let item = {
-
-//   save : function(){
-//     const itemName = one("#itemName").value
-//     let divItem = ` <div class="item">
-//                       <div>${itemName}</div>
-//                       <div onclick="item.delete()">🗑️</div>
-//                     </div>`
-//     one("#items").insertAdjacentHTML('afterbegin', divItem) 
-//     one("#itemName").value = ""
-//   },
+  save : function(){
+    // This is for the DOM
+    const itemName = one("#itemName").value
+    let divItem = ` <div class="item">
+                      <div>${itemName}</div>
+                      <div onclick="item.delete()">🗑️</div>
+                    </div>`
+    one("#items").insertAdjacentHTML('afterbegin', divItem) 
+    one("#itemName").value = ""
+    // This is for memory (localStorage)
+    // {"name":"XXXXXXX"}
+    let jItem = {"name":itemName}
+    // Push the jItem to the items array
+    items.push(jItem)
+    // Save the items array in localStorage
+    localStorage.items = JSON.stringify( items )
+  },
   
-//   delete : function(){
-//     event.target.parentNode.remove()
-//   }
+  delete : function(){
+    event.target.parentNode.remove()
+  }
 
-// }
+}
