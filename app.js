@@ -38,22 +38,19 @@ console.log("theName", theName)
 
 
 
-
-
-
 function one(q){ return document.querySelector(q) }
 function all(q){ return document.querySelectorAll(q) }
 
 let items = ! localStorage.items ? [] : JSON.parse( localStorage.items )
-
 
 // Compoment
 let item = {
 
   save : function(){
     // This is for the DOM
+    const itemId  = Math.random()
     const itemName = one("#itemName").value
-    let divItem = ` <div class="item">
+    let divItem = ` <div class="item" data-itemId="${itemId}">
                       <div>${itemName}</div>
                       <div onclick="item.delete()">🗑️</div>
                     </div>`
@@ -61,7 +58,7 @@ let item = {
     one("#itemName").value = ""
     // This is for memory (localStorage)
     // {"name":"XXXXXXX"}
-    let jItem = {"id" : Math.random() ,"name":itemName}
+    let jItem = {"id" : itemId ,"name":itemName}
     // Push the jItem to the items array
     items.push(jItem)
     // Save the items array in localStorage
@@ -69,7 +66,17 @@ let item = {
   },
   
   delete : function(){
-    event.target.parentNode.remove()
+    // This is for the DOM
+    // alert("deleting item with id: ", item.itemId)
+    // event.target.parentNode.remove()
+    const idFromParentElement = event.target.parentNode.getAttribute("data-itemId")
+    alert("delete item with id "+ idFromParentElement)
+    // Option 1: Set the id of the item in the parent
+    // Option 2: Pass the id of the item to this function
+    // With the id loop/filter the items array
+    // If there is a match in the id remove the item  it from the items array
+    // Remember that this is only in JS memory
+    // Therefore, you must re-write to items array to localStorage (as text)
   }
 
 }
