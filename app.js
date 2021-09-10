@@ -68,9 +68,22 @@ let item = {
   delete : function(){
     // This is for the DOM
     // alert("deleting item with id: ", item.itemId)
-    // event.target.parentNode.remove()
+    event.target.parentNode.remove()
     const idFromParentElement = event.target.parentNode.getAttribute("data-itemId")
-    alert("delete item with id "+ idFromParentElement)
+
+    // for(let i = 0; i < items.length; i++){
+    //   let element = items[i]
+    //   // See if the id matches, if so remove it
+    //   if( idFromParentElement == element.id ){
+    //     items.splice(i, 1)
+    //   }
+    // }
+    // localStorage.items = JSON.stringify(items)
+    
+    items = items.filter( element => element.id !=  idFromParentElement)
+    localStorage.items = JSON.stringify(items)
+
+    // alert("delete item with id "+ idFromParentElement)
     // Option 1: Set the id of the item in the parent
     // Option 2: Pass the id of the item to this function
     // With the id loop/filter the items array
