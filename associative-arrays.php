@@ -22,12 +22,14 @@ $users = [
   <div id="users">
     <?php
     foreach($users as $user){
-      echo "<div class='user'>
-              <div>{$user['name']}</div>
-              <div>{$user['email']}</div>
-              <div>{$user['password']}</div>
-              <button>block user</button>
-            </div>";
+    ?>
+      <div class='user'>
+        <div><?= $user['name'] ?></div>
+        <div><?= $user['email'] ?></div>
+        <div><?= $user['password'] ?></div>
+        <button>block user</button>
+      </div>
+    <?php
     }
     ?>
   </div>
