@@ -1,3 +1,6 @@
+<?php
+  $items = ['a', 'b', 'c'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,8 +10,15 @@
   <title>Document</title>
 </head>
 <body>
+  <?php
+  foreach($items as $item){
+    echo "<div>$item</div>";
+  }
+  // for($i = 0; $i < count($items); $i++){
+  //   echo "<div>$items[$i]</div>";
+  // }
 
-  <script src="traffic.js"></script>
-  
+  ?>
 </body>
 </html>
+
