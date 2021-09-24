@@ -19,12 +19,16 @@ if( ! filter_var( $_POST['email'], FILTER_VALIDATE_EMAIL ) ){ send_400('email is
 $db = require_once('db.php');
 try{
   // Insert data in the DB
-  $q = $db->prepare('INSERT INTO users VALUES(:user_id, :user_name)');
+  $q = $db->prepare('INSERT INTO users 
+  VALUES(:user_id, :user_name, :user_last_name, :user_email)');
   $q->bindValue(":user_id", null); // The db will give this automati.
   $q->bindValue(":user_name", $_POST['name']);
+  $q->bindValue(":user_last_name", $_POST['last_name']);
+  $q->bindValue(":user_email", $_POST['email']);
   $q->execute();
+  $user_id = $db->lastinsertid();
   // SUCCESS
-  echo "You are signed up";
+  echo "You are signed up with id $user_id";
 }catch(Exception $ex){
   http_response_code(500);
   echo 'System under maintainance';
