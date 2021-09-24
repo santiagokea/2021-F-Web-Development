@@ -1,0 +1,7 @@
+*{
+  margin: 0; padding: 0; box-sizing: border-box;
+}
+.item{
+  display: grid;
+  grid-template-columns: 100fr 100fr;  
+}

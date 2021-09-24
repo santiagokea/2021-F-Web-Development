@@ -1,13 +1,5 @@
 <?php
-  $name = 'Santiago';
-  $lastName = 'Donoso';
-
-  function get_full_name(){
-    return 'My name is Santiago';
-  }
-
-  
-
+  $items = ['a', 'b', 'c'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,17 +10,15 @@
   <title>Document</title>
 </head>
 <body>
+  <?php
+  foreach($items as $item){
+    echo "<div>$item</div>";
+  }
+  // for($i = 0; $i < count($items); $i++){
+  //   echo "<div>$items[$i]</div>";
+  // }
 
-  <h3>
-    <?= get_full_name(); ?>
-  </h3>
-
-  <h1>
-    <?= $name; ?>
-  </h1>
-  <h2>
-    <?php echo $lastName; ?>
-  </h2>
+  ?>
 </body>
 </html>
 
