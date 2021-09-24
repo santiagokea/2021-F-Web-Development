@@ -20,17 +20,18 @@ $db = require_once('db.php');
 try{
   // Insert data in the DB
   $q = $db->prepare('INSERT INTO users 
+  
   VALUES(:user_id, :user_name, :user_last_name, :user_email)');
   $q->bindValue(":user_id", null); // The db will give this automati.
   $q->bindValue(":user_name", $_POST['name']);
   $q->bindValue(":user_last_name", $_POST['last_name']);
   $q->bindValue(":user_email", $_POST['email']);
   $q->execute();
-  $user_id = $db->lastinsertid();
+  $user_id = $db->lastInsertId();
   // SUCCESS
   header('Content-Type: application/json');
   // echo '{"info":"user created", "user_id":"'.$user_id.'"}';
-  $response = ["info" => "user created", "user_id" => $user_id];
+  $response = ["info" => "user created", "user_id" => intval($user_id)];
   echo json_encode($response);
 }catch(Exception $ex){
   http_response_code(500);
