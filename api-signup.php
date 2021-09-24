@@ -39,10 +39,6 @@ try{
   exit();
 }
 
-
-
-
-
 // function to manage responding in case of an error
 function send_400($error_message){
   header('Content-Type: application/json');
