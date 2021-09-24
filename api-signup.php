@@ -45,8 +45,10 @@ try{
 
 // function to manage responding in case of an error
 function send_400($error_message){
+  header('Content-Type: application/json');
   http_response_code(400);
-  echo $error_message;
+  $response = ["info"=>$error_message];
+  echo json_encode($response);
   exit();
 }
 
