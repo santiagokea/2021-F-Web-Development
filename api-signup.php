@@ -29,7 +29,9 @@ try{
   $user_id = $db->lastinsertid();
   // SUCCESS
   header('Content-Type: application/json');
-  echo '{"info":"user created", "user_id":"'.$user_id.'"}';
+  // echo '{"info":"user created", "user_id":"'.$user_id.'"}';
+  $response = ["info" => "user created", "user_id" => $user_id];
+  echo json_encode($response);
 }catch(Exception $ex){
   http_response_code(500);
   echo 'System under maintainance';
