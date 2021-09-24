@@ -28,6 +28,7 @@ try{
   $q->execute();
   $user_id = $db->lastinsertid();
   // SUCCESS
+  header('Content-Type: application/json');
   echo '{"info":"user created", "user_id":"'.$user_id.'"}';
 }catch(Exception $ex){
   http_response_code(500);
