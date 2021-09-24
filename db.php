@@ -1,4 +1,5 @@
 <?php
+
 try{
   $database_user_name = 'root';
   $database_pasword = ''; // MAC password is root

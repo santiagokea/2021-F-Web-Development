@@ -14,9 +14,26 @@ if( strlen( $_POST['last_name'] ) > 5 ){ send_400('last_name max 5 characters');
 if( ! isset( $_POST['email'] ) ){ send_400('email is required'); }
 if( ! filter_var( $_POST['email'], FILTER_VALIDATE_EMAIL ) ){ send_400('email is invalid'); }
 
+// Connect to DB
+// include / require
+$db = require_once('db.php');
+try{
+  // Insert data in the DB
+  $q = $db->prepare('INSERT INTO users VALUES(:user_id, :user_name)');
+  $q->bindValue(":user_id", null); // The db will give this automati.
+  $q->bindValue(":user_name", $_POST['name']);
+  $q->execute();
+  // SUCCESS
+  echo "You are signed up";
+}catch(Exception $ex){
+  http_response_code(500);
+  echo 'System under maintainance';
+  exit();
+}
 
-// SUCCESS
-echo "You are signed up";
+
+
+
 
 // function to manage responding in case of an error
 function send_400($error_message){
