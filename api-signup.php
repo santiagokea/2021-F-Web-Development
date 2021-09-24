@@ -28,7 +28,7 @@ try{
   $q->execute();
   $user_id = $db->lastinsertid();
   // SUCCESS
-  echo "You are signed up with id $user_id";
+  echo '{"info":"user created", "user_id":"'.$user_id.'"}';
 }catch(Exception $ex){
   http_response_code(500);
   echo 'System under maintainance';
