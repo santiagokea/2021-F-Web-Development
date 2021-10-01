@@ -3,7 +3,6 @@
 require_once('globals.php');
 
 // Validate
-<<<<<<< HEAD
 if( ! isset($_POST['email']) ){ _res(400,['info'=>'email required']); }
 if( ! filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) ){ 
   _res(400, ['info'=>'email is invalid']); 
@@ -28,15 +27,6 @@ if( $correct_email != $_POST['email'] || $correct_password != $_POST['password']
 _res(200, ['info'=>'success login']);
 
 
-=======
-if( ! isset($_POST['email']) ){ _res(400,["info"=>"email required"]); }
-if( ! filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) ){ 
-  _res(400, ["info"=>"email is invalid"]); 
-}
-
-// Success
-_res(200, ["info"=>"success login"]);
->>>>>>> 0031aa39819bb9350c912f52fff26a846f83e1db
 
 
 
