@@ -25,8 +25,12 @@ try{
   $q->bindValue(':user_email', $_POST['email']);
   $q->execute();
   $row = $q->fetch();
-  var_dump($row);
-  exit();
+  // var_dump($row);
+  // print_r($row);
+  // echo json_encode($row);
+  // var_export($row);
+  if(!$row){ _res(400, ['info'=>'wrong credentials', 'error'=>__LINE__]); }
+  
 }catch(Exception $ex){
   _res(500, ['info'=>'system under maintainance', 'error'=>__LINE__]);
 }
