@@ -30,15 +30,18 @@ try{
   // echo json_encode($row);
   // var_export($row);
   if(!$row){ _res(400, ['info'=>'wrong credentials', 'error'=>__LINE__]); }
-  
+
+  // Success
+  session_start();
+  $_SESSION['user_name'] = $row['user_name'];
+  _res(200, ['info'=>'success login']);
+
+
 }catch(Exception $ex){
   _res(500, ['info'=>'system under maintainance', 'error'=>__LINE__]);
 }
 
-// Success
-session_start();
-$_SESSION['user_name'] = 'Santiago';
-_res(200, ['info'=>'success login']);
+
 
 
 
