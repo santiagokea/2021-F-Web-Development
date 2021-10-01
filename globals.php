@@ -1,5 +1,7 @@
 <?php
 
+define('_PASSWORD_MIN_LEN', 6);
+define('_PASSWORD_MAX_LEN', 20);
 
 // ##############################
 function _res( $status=200, $message=[] ){
