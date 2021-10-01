@@ -1,3 +1,11 @@
+<?php
+session_start();
+if(!isset($_SESSION['user_name'])){
+  header('Location: login');
+  exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,8 +15,14 @@
   <title>Document</title>
 </head>
 <body>
+  <nav>
+    <a href="logout">Logout</a>
+  </nav>
   <h1>
-    XXXXXX
+    <?php
+    
+    echo $_SESSION['user_name'];
+    ?>
   </h1>
 </body>
 </html>

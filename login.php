@@ -22,8 +22,10 @@
         method: "POST",
         body: new FormData(form)
       })
+
       let res = await conn.json()
       console.log(res)
+      if( conn.ok ){ location.href = "user" }
     }
   </script>
   
