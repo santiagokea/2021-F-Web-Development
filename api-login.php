@@ -22,6 +22,8 @@ if( $correct_email != $_POST['email'] || $correct_password != $_POST['password']
 }
 
 // Success
+session_start();
+$_SESSION['user_name'] = 'Santiago';
 _res(200, ['info'=>'success login']);
 
 
