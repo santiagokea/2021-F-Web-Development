@@ -7,7 +7,20 @@ if(!isset($_POST['item_name'])){ http_response_code(400); echo 'item_name requir
 if(strlen($_POST['item_name']) < _ITEM_MIN_LEN){ http_response_code(400); echo 'item_name min '._ITEM_MIN_LEN.' characters'; exit(); }
 if(strlen($_POST['item_name']) > _ITEM_MAX_LEN){ http_response_code(400); echo 'item_name max '._ITEM_MAX_LEN.' characters'; exit(); }
 
+$db = _api_db();
 
-
+try{
+  $q = $db->prepare('INSERT INTO items 
+                      VALUES(:item_id, :item_name)');
+  $q->bindValue(':item_id', 1);
+  $q->bindValue(':item_name', 'A');
+  $q->execute();
+  // Success
+  echo 'Item created with id 1';
+}catch(Exception $ex){
+  http_response_code(500);
+  echo 'System under maintainance '.__LINE__;
+  exit();
+}
 
 
