@@ -8,7 +8,7 @@
 </head>
 <body>
   
-  <form onsubmit="validate(); return false">
+  <form onsubmit="validate(upload_item); return false">
     <input name="item_name" type="text"
       data-validate="str" data-min="2" data-max="20"
     >
@@ -16,6 +16,12 @@
   </form>
 
   <script src="validator.js"></script>
+  <script>
+    function upload_item(){
+      console.log("uploading item...")
+    }
+  </script>
+
 
 </body>
 </html>
