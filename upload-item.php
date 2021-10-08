@@ -35,6 +35,7 @@
         <div class="item">
           <div>${res}</div>
           <div>${item_name}</div>
+          <div>🗑️</div>
         </div>`)
       }
       _one("input[name='item_name']", form).value = ""
