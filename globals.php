@@ -6,7 +6,7 @@ define('_ITEM_MAX_LEN', 20);
 // ##############################
 function _api_db(){
   try{
-    $database_user_name = 'rootxxxx';
+    $database_user_name = 'root';
     $database_password = '';
     $database_connection = 'mysql:host=localhost; dbname=company; charset=utf8mb4';
     
@@ -22,7 +22,6 @@ function _api_db(){
   }
 }
 
-_api_db();
 
 
 
