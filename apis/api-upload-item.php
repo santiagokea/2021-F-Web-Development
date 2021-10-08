@@ -17,7 +17,7 @@ try{
   $q->bindValue(':item_name', $_POST['item_name']);
   $q->execute();
   // Success
-  echo "Item with name {$_POST['item_name']} created with id $item_id";
+  echo $item_id;
 }catch(Exception $ex){
   http_response_code(500);
   echo 'System under maintainance '.__LINE__;
