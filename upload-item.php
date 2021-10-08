@@ -17,8 +17,14 @@
 
   <script src="validator.js"></script>
   <script>
-    function upload_item(){
-      console.log("uploading item...")
+    async function upload_item(){
+      const form = event.target
+      const conn = await fetch("apis/api-upload-item", {
+        method : "POST",
+        body : new FormData(form)
+      })
+      const res = await conn.text()
+      console.log(res)
     }
   </script>
 
