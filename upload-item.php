@@ -8,10 +8,14 @@
 </head>
 <body>
   
-  <form onsubmit="return false">
-    <input name="item_name" type="text">
+  <form onsubmit="validate(); return false">
+    <input name="item_name" type="text"
+      data-validate="str" data-min="2" data-max="20"
+    >
     <button>Upload item</button>
   </form>
+
+  <script src="validator.js"></script>
 
 </body>
 </html>

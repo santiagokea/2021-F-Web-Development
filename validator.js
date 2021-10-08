@@ -1,3 +1,6 @@
+function _one(q, from=document){ return from.querySelector(q) }
+function _all(q, from=document){ return from.querySelectorAll(q) }
+
 
 // ##############################
 function validate(callback){
