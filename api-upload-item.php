@@ -14,7 +14,7 @@ try{
   $q = $db->prepare('INSERT INTO items 
                       VALUES(:item_id, :item_name)');
   $q->bindValue(':item_id', $item_id);
-  $q->bindValue(':item_name', 'A');
+  $q->bindValue(':item_name', $_POST['item_name']);
   $q->execute();
   // Success
   echo "Item created with id $item_id";
