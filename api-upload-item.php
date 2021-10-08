@@ -10,13 +10,14 @@ if(strlen($_POST['item_name']) > _ITEM_MAX_LEN){ http_response_code(400); echo '
 $db = _api_db();
 
 try{
+  $item_id = bin2hex(random_bytes(16));
   $q = $db->prepare('INSERT INTO items 
                       VALUES(:item_id, :item_name)');
-  $q->bindValue(':item_id', 1);
+  $q->bindValue(':item_id', $item_id);
   $q->bindValue(':item_name', 'A');
   $q->execute();
   // Success
-  echo 'Item created with id 1';
+  echo "Item created with id $item_id";
 }catch(Exception $ex){
   http_response_code(500);
   echo 'System under maintainance '.__LINE__;
