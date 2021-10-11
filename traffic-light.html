@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    *{margin:0; padding: 0; box-sizing: border-box;}
+    body{
+      display: grid;
+      align-items: center;
+      justify-items: center;
+      width: 100%;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.5);
+    }
+    #lights{
+      padding: 2rem;
+      border: 2px solid black;
+      width: 14rem;
+      background: rgba(0, 0, 0, 0.8);
+    }
+    #lights * + *{
+      margin-top: 1rem;
+    }
+    .light{
+      width: 10rem;
+      height: 10rem;
+      border-radius: 50%;          
+    }
+    .red_on{ background: rgba(255, 0, 0, 1); }
+    .red_off{ background: rgba(255, 0, 0, 0.2); }
+    .yellow_on{ background: rgba(255, 165, 0, 12); }
+    .yellow_off{ background: rgba(255, 165, 0, 0.2); }
+    .green_on{ background: rgba(60, 179, 113, 1); }
+    .green_off{ background: rgba(60, 179, 113, 0.2); }
+  </style>
+
+  <title>traffic light</title>
+</head>
+<body>
+  
+  <div id="lights">
+    <div id="red" class="light red_off"></div>
+    <div id="yellow" class="light yellow_off"></div>
+    <div id="green" class="light green_off"></div>
+  </div>
+
+  <script>
+    // Get the lights by id
+    const red = document.querySelector("#red")
+    const yellow = document.querySelector("#yellow")
+    const green = document.querySelector("#green")
+
+    function state_one(){
+      red.classList.remove("red_off")
+      red.classList.add("red_on")
+      yellow.classList.remove("yellow_on")
+      yellow.classList.add("yellow_off")      
+      setTimeout( state_two, 3000 )
+    }
+    function state_two(){
+      yellow.classList.remove("yellow_off")
+      yellow.classList.add("yellow_on")
+      setTimeout( state_three, 1000 )      
+    }
+    function state_three(){
+      red.classList.remove("red_on")
+      red.classList.add("red_off")
+      yellow.classList.remove("yellow_on")
+      yellow.classList.add("yellow_off")
+      green.classList.remove("green_off")
+      green.classList.add("green_on")
+      setTimeout( state_four, 3000 )      
+    }
+    function state_four(){
+      yellow.classList.remove("yellow_off")
+      yellow.classList.add("yellow_on")
+      green.classList.remove("green_on")
+      green.classList.add("green_off")    
+      setTimeout( state_one, 2000 )   
+    }     
+
+    // Start the light
+    state_one()   
+
+  </script>
+
+</body>
+</html>
