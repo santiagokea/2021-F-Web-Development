@@ -1,7 +1,7 @@
-*{
-  margin: 0; padding: 0; box-sizing: border-box;
+div#items{
+
 }
-.item{
+div#items div.item{
   display: grid;
-  grid-template-columns: 100fr 100fr;  
+  grid-template-columns: 100fr 100fr 100fr;
 }
