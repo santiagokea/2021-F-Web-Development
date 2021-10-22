@@ -2,11 +2,21 @@
 // Never have HTML
 // Never respond with any data
 // Always and only take you somewhere else
-echo $_POST['email'];
+// VALIDATION
+if( ! isset($_POST['email']) ){
+  header("Location: /signup.php");
+  exit();
+}
+if( ! filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) ){
+  header("Location: /signup.php");
+  exit();
+}
 
 
-// header("Location: /signup-ok.php");
-// exit();
+// OK
+header("Location: /signup-ok.php");
+exit();
+
 
 
 
