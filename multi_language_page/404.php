@@ -7,11 +7,8 @@
   <title>Document</title>
 </head>
 <body>
-  <!-- by default a form is a GET, therefore convert the methos to POST -->
-  <form action="bridges/bridge-signup.php" method="POST">
-    <input name="email" type="text" placeholder="email">
-    <button>Signup</button>
-  </form>
-  
+  <h1>
+    SORRY
+  </h1>
 </body>
 </html>
