@@ -7,11 +7,6 @@
   <title>Document</title>
 </head>
 <body>
-
-  <form action="bridges/bridge-signup.php">
-    <input type="text">
-    <button>Signup</button>
-  </form>
-  
+  <h1>SUCCESS</h1>
 </body>
 </html>
