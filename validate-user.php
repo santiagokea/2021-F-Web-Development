@@ -9,8 +9,9 @@ if(strlen($_GET['key']) != 32){
   exit();
 }
 // TODO: Connect to the db
-$json_data = json_decode(file_get_contents("data.json"));
-echo $json_data->verification_key;
+$json_data = json_decode(file_get_contents("data.json"), true);
+// echo $json_data->verification_key; // json
+echo $json_data["verification_key"];
 // TODO: Update the verified to 1 if match
 // TODO: Say Congrats to the user
 ?>
