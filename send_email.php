@@ -6,9 +6,9 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-require 'Exception.php';
-require 'PHPMailer.php';
-require 'SMTP.php';
+require_once(__DIR__.'/email/Exception.php');
+require_once(__DIR__.'/email/PHPMailer.php');
+require_once(__DIR__.'/email/SMTP.php');
 
 
 // Load Composer's autoloader
@@ -34,15 +34,17 @@ try {
     $mail->isSMTP();                                            // Send using SMTP
     $mail->Host       = 'smtp.gmail.com';                    // Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-    $mail->Username   = 'DUMMY_EMAIL_HERE_XXXXXXXXXXXXXXXXXX';                     // SMTP username
-    $mail->Password   = 'DUMMY_PASSWORD_HERE_XXXXXXXXXXXXXXXXXX';                               // SMTP password
-    // $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` also accepted
-    $mail->SMTPSecure = 'ssl';         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` also accepted
-    $mail->Port       = 465;                                    // TCP port to connect to
+    $mail->Username   = 'santiagokeatestemail@gmail.com';                     // SMTP username
+    $mail->Password   = 'thisismypassword';                               // SMTP password
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` also accepted
+    // $mail->SMTPSecure = 'ssl';         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` also accepted
+    // $mail->Port       = 465;                                    // TCP port to connect to
+    // $mail->SMTPSecure = 'tls';         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` also accepted
+    $mail->Port       = 587;                                    // TCP port to connect to
 
     //Recipients
-    $mail->setFrom('DUMMY_EMAIL_HERE_XXXXXXXXXXXXXXXXXX', 'Mailer');
-    $mail->addAddress('DUMMY_EMAIL_HERE_XXXXXXXXXXXXXXXXXX', 'NAME HERE XXXXXXXXXXXXX');     // Add a recipient
+    $mail->setFrom('santiagokeatestemail@gmail.com', 'Mailer');
+    $mail->addAddress('santiagokeatestemail@gmail.com', 'NAME HERE XXXXXXXXXXXXX');     // Add a recipient
     // $mail->addAddress('ellen@example.com');               // Name is optional
     // $mail->addReplyTo('DUMMY_EMAIL_HERE_XXXXXXXXXXXXXXXXXX', 'Information');
     // $mail->addCC('cc@example.com');
