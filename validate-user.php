@@ -22,7 +22,7 @@ $data["verified"] = 1; // Update command
 /*
 UPDATE users SET verified = 1 WHERE verified_key = "1222"
 */
-file_put_contents("data.json", json_encode($data));
+file_put_contents("data.json", json_encode($data, JSON_PRETTY_PRINT));
 echo "CONGRATS... you are verified";
 // TODO: Say Congrats to the user
 ?>
