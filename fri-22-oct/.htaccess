@@ -1,0 +1,7 @@
+RewriteEngine On
+# Regular expression
+# items/female/blue/1
+RewriteCond %{REQUEST_METHOD} GET
+RewriteRule ^items/(.*)/(.*)/(.*)$ items.php?gender=$1&color=$2&price=$3 [NC,L]
+
+
