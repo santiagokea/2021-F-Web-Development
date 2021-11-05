@@ -6,9 +6,9 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-require_once(__DIR__.'/email/Exception.php');
-require_once(__DIR__.'/email/PHPMailer.php');
-require_once(__DIR__.'/email/SMTP.php');
+require_once(__DIR__.'/../email/Exception.php');
+require_once(__DIR__.'/../email/PHPMailer.php');
+require_once(__DIR__.'/../email/SMTP.php');
 
 
 // Load Composer's autoloader
@@ -30,7 +30,8 @@ try {
 
 
     //Server settings
-    $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      // Enable verbose debug output
+    // $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      // Enable verbose debug output
+    $mail->SMTPDebug = 0;                      // Enable verbose debug output
     $mail->isSMTP();                                            // Send using SMTP
     $mail->Host       = 'smtp.gmail.com';                    // Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
@@ -44,7 +45,7 @@ try {
 
     //Recipients
     $mail->setFrom('santiagokeatestemail@gmail.com', 'Mailer');
-    $mail->addAddress('santiagokeatestemail@gmail.com', 'NAME HERE XXXXXXXXXXXXX');     // Add a recipient
+    $mail->addAddress($_to_email, 'NAME HERE XXXXXXXXXXXXX');     // Add a recipient
     // $mail->addAddress('ellen@example.com');               // Name is optional
     // $mail->addReplyTo('DUMMY_EMAIL_HERE_XXXXXXXXXXXXXXXXXX', 'Information');
     // $mail->addCC('cc@example.com');
@@ -57,7 +58,7 @@ try {
     // Content
     $mail->isHTML(true);                                  // Set email format to HTML
     $mail->Subject = 'AMAZON OR ZILLOW';
-    $mail->Body    = 'THANK you for using our system';
+    $mail->Body    = $_message;
     // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
     $mail->send();
