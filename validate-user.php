@@ -17,5 +17,12 @@ if( $_GET["key"] != $data["verification_key"] ){
   echo "mmm... suspicious (keys don't match)";
   exit();
 }
+
+$data["verified"] = 1; // Update command
+/*
+UPDATE users SET verified = 1 WHERE verified_key = "1222"
+*/
+file_put_contents("data.json", json_encode($data));
+echo "CONGRATS... you are verified";
 // TODO: Say Congrats to the user
 ?>
