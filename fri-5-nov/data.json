@@ -1,0 +1,7 @@
+{
+    "id": 1,
+    "name": "A",
+    "email": "x@x.xxx",
+    "verified": 1,
+    "verification_key": "12345678901234567890123456789012"
+}

@@ -1,14 +1,3 @@
-<?php
-  $name = 'Santiago';
-  $lastName = 'Donoso';
-
-  function get_full_name(){
-    return 'My name is Santiago';
-  }
-
-  
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,17 +7,8 @@
   <title>Document</title>
 </head>
 <body>
-
-  <h3>
-    <?= get_full_name(); ?>
-  </h3>
-
   <h1>
-    <?= $name; ?>
+    SORRY
   </h1>
-  <h2>
-    <?php echo $lastName; ?>
-  </h2>
 </body>
 </html>
-

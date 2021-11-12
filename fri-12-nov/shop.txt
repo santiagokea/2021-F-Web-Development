@@ -1,0 +1,1 @@
+[{"id":"sand-6ff9bc40-9bf9-4ca4-a26e-8e538c533d58","title_en":"Hous\\te","title_es":"Hous \\ te","description":"AA","price":"10","image":"sand-6ff9bc40-9bf9-4ca4-a26e-8e538c533d58.jpg","img":""},{"id":"sand-af76039d-682a-402b-9307-269966e8889c","title_en":"Car","title_es":"Coche","description":"BB","price":"20","image":"sand-af76039d-682a-402b-9307-269966e8889c.jpg","img":""}]

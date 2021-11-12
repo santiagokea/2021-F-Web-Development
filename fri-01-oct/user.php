@@ -1,14 +1,11 @@
 <?php
-  $name = 'Santiago';
-  $lastName = 'Donoso';
-
-  function get_full_name(){
-    return 'My name is Santiago';
-  }
-
-  
-
+session_start();
+if(!isset($_SESSION['user_name'])){
+  header('Location: login');
+  exit();
+}
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,17 +15,14 @@
   <title>Document</title>
 </head>
 <body>
-
-  <h3>
-    <?= get_full_name(); ?>
-  </h3>
-
+  <nav>
+    <a href="logout">Logout</a>
+  </nav>
   <h1>
-    <?= $name; ?>
+    <?php
+    
+    echo $_SESSION['user_name'];
+    ?>
   </h1>
-  <h2>
-    <?php echo $lastName; ?>
-  </h2>
 </body>
 </html>
-
