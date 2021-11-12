@@ -19,9 +19,11 @@ echo $_SESSION["theme"];
     About us
   </h1>
 
-<input type="radio" name="theme" value="Light" checked>
+<input type="radio" name="theme" value="Light" 
+  <?= $_SESSION["theme"] == "light" ? "checked" : "" ?>>
 <label for="html">Light</label>
-<input type="radio" name="theme" value="Dark">
+<input type="radio" name="theme" value="Dark"
+  <?= $_SESSION["theme"] == "dark" ? "checked" : "" ?>>
 <label for="css">Dark</label>
 
   
