@@ -1,7 +1,6 @@
-*{
-  margin: 0; padding: 0; box-sizing: border-box;
+.light{
+  color:aqua;
 }
-.item{
-  display: grid;
-  grid-template-columns: 100fr 100fr;  
+.dark{
+  color: purple;
 }
