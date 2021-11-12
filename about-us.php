@@ -18,6 +18,12 @@ echo $_SESSION["theme"];
   <h1>
     About us
   </h1>
+
+<input type="radio" name="theme" value="Light" checked>
+<label for="html">Light</label>
+<input type="radio" name="theme" value="Dark">
+<label for="css">Dark</label>
+
   
 </body>
 </html>
